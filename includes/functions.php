@@ -15,7 +15,7 @@ function donate($dbh, $amount, $id) {
     $newMontant = $montant + $amount;
     $don = $dbh->connect()->prepare('UPDATE montant SET value = ? WHERE id = ?');
     $don->execute(array($newMontant, $id));
-    header("Location: ./dashboard.php");
+    header("Location: ./donation.php");
 }
  
 ?>

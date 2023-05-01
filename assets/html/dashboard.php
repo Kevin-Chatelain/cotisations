@@ -16,7 +16,6 @@
 </head>
 
 <body class="accueil">
-
     <h1>Bonjour <?php echo $_SESSION["prenom"]; ?></h1>
     <a href="../../includes/logout.inc.php">Déconnexion</a>
 
@@ -26,25 +25,7 @@
     ?>
     <p>Montant de la cagnotte: <?php echo $montant[0]['value']; ?> €</p>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <h2>Faire un don</h2>
-
-        <input type="text" name="montant" id="montant" placeholder="montant">
-        <input type="submit" name="donnation" value="Valider">
-
-        <?php 
-
-            if(isset($_POST['donnation'])) {
-                $don = $_POST['montant'];
-                donate($dbh ,$don, 1);
-            }
-    
-        ?>
-    
-    </form>
-
-    
-
+    <a href="./donation.php">Faire un don</a>
 </body>
 
 </html>
